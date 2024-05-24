@@ -146,7 +146,7 @@ struct RangeDev(R) {
             return n;
         }
         else
-            static assert(false, "Incompatible read for type `", Buf, "` and source range `", R, "`");
+            static assert(false, "Incompatible read for type `" ~ Buf.stringof ~ "` and source range `" ~ R.stringof ~ "`");
     }
 }
 
