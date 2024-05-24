@@ -23,7 +23,7 @@ void processLines(UTFType utfType, Dev)(Dev dev)
 void main(string[] args)
 {
     import std.io;
-    import std.typecons : refCounted;
+    import iopipe.refc : refCounted;
     if(args.length > 1 && args[1] == "-nooutput")
         doOutput = false;
     File(0).refCounted.bufd.runWithEncoding!processLines;

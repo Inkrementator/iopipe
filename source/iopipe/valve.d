@@ -347,7 +347,7 @@ auto push(alias pipeline, bool autoFlush = true, Chain)(Chain c) if (isIopipe!(t
 {
     static if(autoFlush)
     {
-        import std.typecons: refCounted;
+        import iopipe.refc: refCounted;
         return .autoFlush(pipeline(c.holdingValve).holdingLoop);
     }
     else

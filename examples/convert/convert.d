@@ -1,9 +1,9 @@
 import iopipe.textpipe;
 import iopipe.bufpipe;
 import iopipe.buffer;
+import iopipe.refc;
 import std.io;
 import std.range.primitives;
-import std.typecons : refCounted;
 
 auto stdin()
 {

@@ -1,7 +1,7 @@
 import iopipe.zip;
 import iopipe.bufpipe;
+import iopipe.refc;
 import std.io;
-import std.typecons : refCounted;
 
 void main()
 {

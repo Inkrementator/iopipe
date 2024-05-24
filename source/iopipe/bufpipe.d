@@ -603,7 +603,7 @@ auto rbufd(T=ubyte, size_t optimalReadSize = 8 * 1024 / T.sizeof, Source)(Source
     if(hasMember!(Source, "read") && is(typeof(dev.read(T[].init)) == size_t))
 {
     // need to refcount the ring buffer, since it's not copyable
-    import std.typecons : refCounted;
+    import iopipe.refc : refCounted;
     auto buffer = refCounted(RingBuffer!T());
     return BufferedInputSource!(typeof(buffer), Source, optimalReadSize)(dev, buffer);
 }
@@ -892,7 +892,7 @@ template iosrc(alias fun, Chain)
 }
 
 // TODO: need to deal with general ranges.
-import std.typecons;
+import std.typecons : Flag;
 alias ReleaseOnWrite = Flag!"releaseOnWrite";
 /**
  * Write data from a random access range or character array into the given

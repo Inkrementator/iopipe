@@ -1,9 +1,9 @@
 import iopipe.textpipe;
 import iopipe.bufpipe;
 import iopipe.valve;
+import iopipe.refc;
 import std.format;
 import std.io;
-import std.typecons : refCounted;
 
 auto stdout()
 {
