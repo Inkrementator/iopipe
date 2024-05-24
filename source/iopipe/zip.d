@@ -312,7 +312,7 @@ auto unzipSrc(Chain)(Chain c, CompressionFormat format = CompressionFormat.deter
  *    An input stream whose `read` method compresses the input iopipe data into
  *    the given buffer.
  */
-auto zipSrc(Chain)(Chain c, CompressionFormat format = CompressionFormat.gzip) @safe
+auto zipSrc(Chain)(Chain c, CompressionFormat format = CompressionFormat.gzip)
     if(isIopipe!(Chain) && is(WindowType!Chain : const(ubyte)[]))
 {
     if(c.window.length == 0)
